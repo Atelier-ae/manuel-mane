@@ -2,341 +2,478 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080808">
-  <meta name="description" content="Manuel Mané — Contemporary Artist. Expressive original paintings and digital art.">
-  <title>Manuel Mané — Contemporary Artist</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Manuel Mané – Contemporary Artist. Expressive original paintings, raw energy and digital art.">
+<title>Manuel Mané – Contemporary Artist</title>
 
-  <style>
-    * { box-sizing: border-box; }
+<style>
+:root {
+  --bg: #080808;
+  --surface: #111111;
+  --text: #f5f5f5;
+  --muted: #a3a3a3;
+  --line: #292929;
+}
 
-    html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      background: #080808;
-      color: #f5f5f5;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
-    a { color: inherit; text-decoration: none; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 22px 6%;
-      border-bottom: 1px solid #292929;
-    }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-size: 20px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+header {
+  position: relative;
+  z-index: 5;
+  background: rgba(8, 8, 8, 0.97);
+  border-bottom: 1px solid var(--line);
+}
 
-    .brand img {
-      width: 52px;
-      height: 48px;
-      object-fit: contain;
-    }
+.nav-wrap {
+  max-width: 1440px;
+  margin: auto;
+  padding: 24px 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
 
-    nav a:hover { color: #aaa; }
+.logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
 
-    .hero {
-      padding: 34px 6% 70px;
-      text-align: center;
-    }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
 
-    .hero-image {
-      display: block;
-      width: 100%;
-      max-height: 680px;
-      object-fit: contain;
-      margin: 0 auto 42px;
-      background: #111;
-    }
+nav a {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #dedede;
+  transition: color .2s;
+}
 
-    .eyebrow {
-      color: #aaa;
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
+nav a:hover,
+footer a:hover {
+  color: #999;
+}
 
-    h1 {
-      margin: 14px 0;
-      font-size: clamp(40px, 8vw, 84px);
-      line-height: 1.08;
-      letter-spacing: -2px;
-    }
+.hero {
+  max-width: 1440px;
+  margin: auto;
+  padding: 36px 5% 100px;
+  text-align: center;
+}
 
-    .intro {
-      max-width: 620px;
-      margin: 20px auto 30px;
-      color: #bbb;
-      font-size: clamp(16px, 2vw, 21px);
-    }
+.hero-image {
+  width: 100%;
+  max-height: 850px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 60px;
+}
 
-    .button {
-      display: inline-block;
-      padding: 13px 24px;
-      border: 1px solid #eee;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      transition: .2s;
-    }
+.eyebrow {
+  color: #aaa;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
 
-    .button:hover {
-      color: #080808;
-      background: #f5f5f5;
-    }
+h1 {
+  font-size: clamp(42px, 8vw, 92px);
+  line-height: 1.05;
+  margin: 18px 0;
+  letter-spacing: -3px;
+}
 
-    section { padding: 65px 6%; }
+.intro {
+  color: #bdbdbd;
+  font-size: clamp(18px, 2.5vw, 26px);
+  max-width: 760px;
+  margin: 24px auto 35px;
+}
 
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
+.button {
+  display: inline-block;
+  border: 1px solid #eee;
+  padding: 14px 25px;
+  margin: 5px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background .2s, color .2s;
+}
 
-    h2 {
-      margin: 0;
-      font-size: clamp(28px, 5vw, 46px);
-      font-weight: 500;
-      letter-spacing: -1px;
-    }
+.button:hover {
+  background: #f5f5f5;
+  color: #080808;
+}
 
-    .section-note {
-      color: #999;
-      font-size: 13px;
-    }
+.button.secondary {
+  border-color: #555;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px 22px;
-    }
+section.content {
+  max-width: 1440px;
+  padding: 85px 5%;
+  margin: auto;
+}
 
-    figure { margin: 0; min-width: 0; }
+.section-heading {
+  margin-bottom: 40px;
+}
 
-    .art-link {
-      display: block;
-      background: #111;
-    }
+h2 {
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 12px;
+  letter-spacing: -1.5px;
+}
 
-    .artwork-image {
-      display: block;
-      width: 100%;
-      height: 460px;
-      object-fit: contain;
-      transition: opacity .25s;
-    }
+.section-note {
+  color: var(--muted);
+  font-size: 17px;
+}
 
-    .art-link:hover .artwork-image { opacity: .85; }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 55px 28px;
+}
 
-    figcaption {
-      padding-top: 12px;
-      color: #ccc;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-    }
+.artwork {
+  margin: 0;
+  min-width: 0;
+}
 
-    .about {
-      border-top: 1px solid #292929;
-      border-bottom: 1px solid #292929;
-      text-align: center;
-    }
+.artwork a {
+  display: block;
+  overflow: hidden;
+  background: var(--surface);
+}
 
-    .about p,
-    .digital p {
-      max-width: 650px;
-      margin: 20px auto 28px;
-      color: #b5b5b5;
-    }
+.artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 220px;
+  object-fit: contain;
+  transition: transform .5s;
+}
 
-    .digital { text-align: center; }
+.artwork a:hover img {
+  transform: scale(1.025);
+}
 
-    footer {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      padding: 28px 6%;
-      border-top: 1px solid #292929;
-      color: #888;
-      font-size: 12px;
-    }
+.artwork figcaption {
+  padding-top: 16px;
+  color: #bdbdbd;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
-    @media (max-width: 650px) {
-      header {
-        align-items: flex-start;
-        flex-direction: column;
-      }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
 
-      nav { gap: 15px; }
+.about-grid p {
+  color: #bdbdbd;
+  font-size: 18px;
+  margin-top: 0;
+}
 
-      .hero { padding: 20px 5% 48px; }
+.digital-panel {
+  background: #111;
+  border: 1px solid var(--line);
+  padding: clamp(28px, 6vw, 65px);
+}
 
-      .hero-image {
-        max-height: 470px;
-        margin-bottom: 34px;
-      }
+.digital-panel p {
+  color: #bdbdbd;
+  max-width: 650px;
+}
 
-      section { padding: 45px 5%; }
+.shop-panel {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 55px 0;
+}
 
-      .gallery {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
+footer {
+  border-top: 1px solid var(--line);
+  padding: 35px 5%;
+  color: #999;
+  font-size: 13px;
+}
 
-      .artwork-image {
-        height: auto;
-        max-height: 650px;
-        aspect-ratio: 4 / 5;
-      }
-    }
-  </style>
+.footer-inner {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+@media (max-width: 700px) {
+  .nav-wrap {
+    padding: 20px 5%;
+  }
+
+  .brand {
+    font-size: 19px;
+    letter-spacing: 1px;
+  }
+
+  .logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  nav {
+    width: 100%;
+    gap: 17px;
+  }
+
+  nav a {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .hero {
+    padding-top: 25px;
+    padding-bottom: 65px;
+  }
+
+  .hero-image {
+    margin-bottom: 42px;
+  }
+
+  h1 {
+    letter-spacing: -1.5px;
+  }
+
+  section.content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <a class="brand" href="#home">
-      <img src="logo.png" alt="Manuel Mané Logo">
+
+<header>
+  <div class="nav-wrap">
+    <a class="brand" href="#home" aria-label="Manuel Mané Startseite">
+      <img class="logo" src="logo.png" alt="">
       <span>MANUEL MANÉ</span>
     </a>
 
-    <nav aria-label="Main navigation">
-      <a href="#works">Works</a>
-      <a href="#about">About</a>
-      <a href="#digital">Digital Art</a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#works">WORKS</a>
+      <a href="#about">ABOUT</a>
+      <a href="#digital-art">DIGITAL ART</a>
       <a href="https://www.ebay.de/usr/atelier_ae"
-         target="_blank" rel="noopener noreferrer">Shop</a>
+         target="_blank" rel="noopener noreferrer">SHOP</a>
+      <a href="https://www.instagram.com/artistmanuelmane/"
+         target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <div class="hero" id="home">
-      <img class="hero-image"
-           src="titelbild.png"
-           alt="Artwork by Manuel Mané">
+<main>
+  <section class="hero" id="home">
+    <img class="hero-image"
+         src="titelbild.png"
+         alt="Original painting by Manuel Mané">
 
-      <p class="eyebrow">Contemporary Artist</p>
-      <h1>MANUEL MANÉ</h1>
-      <p class="intro">
-        Expressive paintings. Raw energy. Contemporary art.
-      </p>
-      <a class="button" href="#works">Discover the works</a>
+    <p class="eyebrow">Contemporary Artist</p>
+    <h1>MANUEL MANÉ</h1>
+
+    <p class="intro">
+      Expressive paintings. Raw energy. Contemporary art.
+    </p>
+
+    <a class="button" href="#works">Discover the works</a>
+    <a class="button secondary"
+       href="https://www.ebay.de/usr/atelier_ae"
+       target="_blank" rel="noopener noreferrer">Shop original art</a>
+  </section>
+
+  <section class="content" id="works">
+    <div class="section-heading">
+      <h2>Selected Works</h2>
+      <span class="section-note">Original paintings · Selected works</span>
     </div>
 
-    <section id="works">
-      <div class="section-heading">
-        <h2>Selected Works</h2>
-        <span class="section-note">Original paintings · 01—06</span>
+    <div class="gallery">
+      <figure class="artwork">
+        <a href="gemaelde1.png" target="_blank" rel="noopener noreferrer">
+          <img src="gemaelde1.png"
+               alt="Original painting 01 by Manuel Mané"
+               loading="lazy">
+        </a>
+        <figcaption>Work Nº 01</figcaption>
+      </figure>
+
+      <figure class="artwork">
+        <a href="gemaelde2.png" target="_blank" rel="noopener noreferrer">
+          <img src="gemaelde2.png"
+               alt="Original painting 02 by Manuel Mané"
+               loading="lazy">
+        </a>
+        <figcaption>Work Nº 02</figcaption>
+      </figure>
+
+      <figure class="artwork">
+        <a href="gemaelde3.png" target="_blank" rel="noopener noreferrer">
+          <img src="gemaelde3.png"
+               alt="Original painting 03 by Manuel Mané"
+               loading="lazy">
+        </a>
+        <figcaption>Work Nº 03</figcaption>
+      </figure>
+
+      <figure class="artwork">
+        <a href="gemaelde5.png" target="_blank" rel="noopener noreferrer">
+          <img src="gemaelde5.png"
+               alt="Original painting 05 by Manuel Mané"
+               loading="lazy">
+        </a>
+        <figcaption>Work Nº 05</figcaption>
+      </figure>
+
+      <figure class="artwork">
+        <a href="gemaelde6.png" target="_blank" rel="noopener noreferrer">
+          <img src="gemaelde6.png"
+               alt="Original painting 06 by Manuel Mané"
+               loading="lazy">
+        </a>
+        <figcaption>Work Nº 06</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="content" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow">The Artist</p>
+        <h2>Art without filters.</h2>
       </div>
 
-      <div class="gallery">
-        <figure>
-          <a class="art-link" href="gemaelde1.png" target="_blank" rel="noopener">
-            <img class="artwork-image" src="gemaelde1.png" alt="Painting 01 by Manuel Mané" loading="lazy">
-          </a>
-          <figcaption>WORK Nº 01</figcaption>
-        </figure>
-
-        <figure>
-          <a class="art-link" href="gemaelde2.png" target="_blank" rel="noopener">
-            <img class="artwork-image" src="gemaelde2.png" alt="Painting 02 by Manuel Mané" loading="lazy">
-          </a>
-          <figcaption>WORK Nº 02</figcaption>
-        </figure>
-
-        <figure>
-          <a class="art-link" href="gemaelde3.png" target="_blank" rel="noopener">
-            <img class="artwork-image" src="gemaelde3.png" alt="Painting 03 by Manuel Mané" loading="lazy">
-          </a>
-          <figcaption>WORK Nº 03</figcaption>
-        </figure>
-
-        <figure>
-          <a class="art-link" href="gemaelde4.png" target="_blank" rel="noopener">
-            <img class="artwork-image" src="gemaelde4.png" alt="Painting 04 by Manuel Mané" loading="lazy">
-          </a>
-          <figcaption>WORK Nº 04</figcaption>
-        </figure>
-
-        <figure>
-          <a class="art-link" href="gemaelde5.png" target="_blank" rel="noopener">
-            <img class="artwork-image" src="gemaelde5.png" alt="Painting 05 by Manuel Mané" loading="lazy">
-          </a>
-          <figcaption>WORK Nº 05</figcaption>
-        </figure>
-
-        <figure>
-          <a class="art-link" href="gemaelde6.png" target="_blank" rel="noopener">
-            <img class="artwork-image" src="gemaelde6.png" alt="Painting 06 by Manuel Mané" loading="lazy">
-          </a>
-          <figcaption>WORK Nº 06</figcaption>
-        </figure>
+      <div>
+        <p>
+          Manuel Mané creates expressive contemporary paintings
+          driven by bold colours, raw linework and uncompromising energy.
+          His work moves between street art, pop culture and neo-expressionism.
+        </p>
+        <p>
+          Every painting is an original work, created to bring character
+          and a strong visual presence into a space.
+        </p>
+        <a class="button"
+           href="https://www.instagram.com/artistmanuelmane/"
+           target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="about" id="about">
-      <p class="eyebrow">The Artist</p>
-      <h2>Art without boundaries.</h2>
-      <p>
-        Manuel Mané creates expressive contemporary paintings
-        defined by raw energy, bold gestures and an unmistakable
-        visual language.
-      </p>
-    </section>
-
-    <section class="digital" id="digital">
+  <section class="content" id="digital-art">
+    <div class="digital-panel">
       <p class="eyebrow">Beyond the Canvas</p>
-      <h2>Digital Art &amp; NFTs</h2>
+      <h2>Digital Art & NFTs</h2>
       <p>
-        Exploring the intersection of contemporary art,
-        digital creativity and on-chain culture.
+        Exploring the connection between contemporary art, digital culture
+        and blockchain-based art.
       </p>
-    </section>
+      <a class="button"
+         href="https://www.instagram.com/artistmanuelmane/"
+         target="_blank" rel="noopener noreferrer">Explore on Instagram</a>
+    </div>
+  </section>
 
-    <section class="digital">
+  <section class="content" id="shop">
+    <div class="shop-panel">
       <p class="eyebrow">Available Works</p>
-      <h2>Collect Original Art.</h2>
-      <p>
-        Discover selected original paintings in the Atelier AE shop.
+      <h2>Find your original.</h2>
+      <p class="section-note">
+        Discover original paintings by Manuel Mané in the Atelier AE shop.
       </p>
       <a class="button"
          href="https://www.ebay.de/usr/atelier_ae"
-         target="_blank" rel="noopener noreferrer">
-        Visit eBay Shop
-      </a>
-    </section>
-  </main>
+         target="_blank" rel="noopener noreferrer">Shop on eBay</a>
+    </div>
+  </section>
+</main>
 
-  <footer>
-    <span>© Manuel Mané</span>
-    <span>Contemporary Artist · Germany</span>
-    <a href="https://www.ebay.de/usr/atelier_ae"
-       target="_blank" rel="noopener noreferrer">Atelier AE on eBay</a>
-  </footer>
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year">2026</span> Manuel Mané · Contemporary Artist</span>
+
+    <div class="footer-links">
+      <a href="https://www.instagram.com/artistmanuelmane/"
+         target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.ebay.de/usr/atelier_ae"
+         target="_blank" rel="noopener noreferrer">Atelier AE Shop</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
