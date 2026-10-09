@@ -1,71 +1,103 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Manuel Mané — Artist</title>
-<meta name="description" content="Original paintings and digital art by Manuel Mané.">
+<title>Manuel Mané — Contemporary Artist</title>
+<meta name="description" content="Original paintings, digital art and NFTs by Manuel Mané.">
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f8f7f4;color:#171717;font-family:Arial,Helvetica,sans-serif}
-header{padding:24px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ddd}
-.logo{font-size:21px;font-weight:800;letter-spacing:-1px}
-nav a{color:#171717;text-decoration:none;margin-left:20px;font-size:12px}
-.hero{padding:75px 6% 35px}
-.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase}
-h1{font-size:clamp(48px,10vw,110px);letter-spacing:-.075em;line-height:.88;margin:25px 0}
-.intro{font-size:16px;line-height:1.6;max-width:450px;color:#555}
-.art{padding:20px 6% 70px}
-.art img{width:100%;display:block;object-fit:cover;max-height:680px;background:#e5e1da}
-.caption{display:flex;justify-content:space-between;gap:12px;font-size:11px;padding-top:12px;text-transform:uppercase;letter-spacing:1px}
-section{padding:65px 6%;border-top:1px solid #ddd}
-h2{font-size:38px;letter-spacing:-2px;margin:0 0 18px}
-section p{font-size:15px;line-height:1.7;max-width:520px;color:#555}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
-.btn{display:inline-block;padding:15px 20px;border:1px solid #171717;color:#171717;text-decoration:none;font-size:12px}
-.btn.dark{background:#171717;color:white}
-footer{padding:25px 6%;font-size:11px;display:flex;justify-content:space-between;gap:12px;border-top:1px solid #ddd}
-@media(max-width:600px){header{padding:20px 5%}nav a{margin-left:10px;font-size:10px}.hero{padding-top:55px}.caption{font-size:9px}section{padding-top:48px;padding-bottom:48px}}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#111}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 5%;border-bottom:1px solid #eee}
+.logo{width:64px;height:48px;object-fit:contain;background:#000}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:#111;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:1px}
+.hero{padding:65px 5% 35px}
+.eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#666}
+h1{font-size:clamp(42px,8vw,100px);line-height:.95;letter-spacing:-4px;margin:22px 0}
+.hero p{font-size:18px;color:#555;max-width:550px;line-height:1.6}
+.gallery{padding:20px 5% 80px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.art img{width:100%;height:auto;display:block;background:#f4f4f4}
+.art h2{font-size:15px;font-weight:500;margin:12px 0 5px}
+.art p{font-size:12px;color:#777;margin:0}
+.section{padding:55px 5%;border-top:1px solid #eee}
+.section h2{font-size:34px;margin:0 0 18px}
+.section p{max-width:600px;line-height:1.7;color:#555}
+.button{display:inline-block;margin-top:14px;background:#111;color:#fff;padding:15px 22px;text-decoration:none;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+footer{padding:28px 5%;background:#111;color:#fff;font-size:12px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+footer a{color:#fff}
+@media(max-width:600px){header{align-items:flex-start;gap:16px}.logo{width:48px;height:38px}nav{gap:12px;max-width:250px}nav a{font-size:10px}.gallery{gap:12px}.hero{padding-top:45px}h1{letter-spacing:-2px}}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">MANUEL MANÉ®</div>
-<nav><a href="#paintings">PAINTINGS</a><a href="#digital">DIGITAL</a><a href="#about">ABOUT</a></nav>
+<img class="logo" src="logo.png" alt="AE Logo">
+<nav>
+<a href="#paintings">Paintings</a>
+<a href="#digital">Digital Art</a>
+<a href="#nfts">NFTs</a>
+<a href="#about">About</a>
+</nav>
 </header>
+
 <main>
-<div class="hero">
-<div class="eyebrow">Independent Artist · Germany</div>
-<h1>ART WITHOUT<br>PERMISSION.</h1>
-<p class="intro">Original paintings, raw expressions and digital experiments. Discover the world of Manuel Mané.</p>
-</div>
-<div class="art" id="paintings">
-<img src="https://placehold.co/1400x1000/e5e1da/171717?text=YOUR+ARTWORK+HERE" alt="Artwork by Manuel Mané">
-<div class="caption"><span>Selected Work · 01</span><span>Original Painting</span></div>
-</div>
-<section>
-<h2>Original Paintings</h2>
-<p>Expressive contemporary paintings created to transform modern spaces. Each original work carries its own character, energy and story.</p>
-<div class="links">
-<a class="btn dark" href="https://www.ebay.de/" target="_blank" rel="noopener">SHOP ORIGINAL ART ↗</a>
-<a class="btn" href="#about">INQUIRIES ↗</a>
-</div>
+<section class="hero">
+<div class="eyebrow">Contemporary Artist · Germany</div>
+<h1>MANUEL<br>MANÉ.</h1>
+<p>Expressive paintings. Raw energy. A world between contemporary art, street culture and digital experimentation.</p>
 </section>
-<section id="digital">
-<h2>Digital Art & NFTs</h2>
-<p>Experiments beyond the canvas. Discover digital works, animations, GIFs and onchain art.</p>
-<div class="links">
-<a class="btn" href="https://opensea.io/" target="_blank" rel="noopener">EXPLORE ON OPENSEA ↗</a>
-</div>
+
+<section class="gallery" id="paintings">
+<article class="art">
+<img src="painting-01.jpg" alt="Original painting 1">
+<h2>Original Painting No. 01</h2><p>Mixed media · Original artwork</p>
+</article>
+<article class="art">
+<img src="painting-02.jpg" alt="Original painting 2">
+<h2>Original Painting No. 02</h2><p>Mixed media · Original artwork</p>
+</article>
+<article class="art">
+<img src="painting-03.jpg" alt="Original painting 3">
+<h2>Original Painting No. 03</h2><p>Mixed media · Original artwork</p>
+</article>
+<article class="art">
+<img src="painting-04.jpg" alt="Original painting 4">
+<h2>Original Painting No. 04</h2><p>Mixed media · Original artwork</p>
+</article>
+<article class="art">
+<img src="painting-05.jpg" alt="Original painting 5">
+<h2>Original Painting No. 05</h2><p>Mixed media · Original artwork</p>
+</article>
 </section>
-<section id="about">
-<div class="eyebrow">The Artist</div>
-<h2>Manuel Mané</h2>
-<p>Contemporary artist working across expressive painting, visual experimentation and digital art. More works and information coming soon.</p>
-<a class="btn" href="mailto:hello@artistmanuelmane.com">GET IN TOUCH ↗</a>
+
+<section class="section" id="digital">
+<h2>Digital Art</h2>
+<p>Exploring the space between physical paintings, animation and digital images.</p>
+</section>
+
+<section class="section" id="nfts">
+<h2>NFTs & Onchain Art</h2>
+<p>Digital experiments and artworks created for the blockchain.</p>
+<a class="button" href="https://opensea.io/" target="_blank" rel="noopener">Explore NFTs</a>
+</section>
+
+<section class="section" id="about">
+<h2>About the Artist</h2>
+<p>Manuel Mané creates expressive contemporary paintings with bold colors, gestural lines and an uncompromising visual language.</p>
+<a class="button" href="mailto:hello@example.com">Contact</a>
+</section>
+
+<section class="section">
+<h2>Original Artworks</h2>
+<p>Discover available original paintings and inquire about purchasing a work.</p>
+<a class="button" href="https://www.ebay.de/" target="_blank" rel="noopener">Shop Original Paintings</a>
 </section>
 </main>
-<footer><span>© MANUEL MANÉ</span><span>PAINTINGS · DIGITAL ART · NFTs</span></footer>
+
+<footer>
+<span>© Manuel Mané</span>
+<span>Paintings · Digital Art · NFTs</span>
+</footer>
 </body>
 </html>
